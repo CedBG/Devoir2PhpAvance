@@ -1,6 +1,7 @@
 <?php
 
-require '../classes/Discuss.php';
+require 'classes/Discuss.php';
+
 
 function read($csv){
     $file = fopen($csv, 'r');
@@ -17,6 +18,29 @@ $csv = read($csv);
 echo '<pre>';
 print_r($csv);
 echo '</pre>';
+
+
+
+echo '<table border="5"> <tr>';
+while($colonne = $résultat->fetch_field())
+{          
+    echo '<th>' . $colonne->name . '</th>';
+}
+echo "</tr>";
+ 
+while ($ligne = $résultat->fetch_assoc())
+{
+    echo '<tr>';
+    foreach ($ligne as $indice => $information)
+    {
+        echo '<td>' . $information . '</td>';
+    }
+    echo '</tr>';
+}
+echo '</table>';
+
+
+?>
 
 
 ?>
