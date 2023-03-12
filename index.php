@@ -1,5 +1,6 @@
 <?php
 
+require '../classes/Discuss.php';
 
 function read($csv){
     $file = fopen($csv, 'r');
@@ -37,3 +38,5 @@ echo '</pre>';
 
 </body>
 </html>
+
+
