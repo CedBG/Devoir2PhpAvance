@@ -6,6 +6,7 @@ use App\classes\Discuss;
 
 require './functions/config.php';
 require './functions/readCsv.php';
+require
 
 $pathCsv = 'paris.csv';
 

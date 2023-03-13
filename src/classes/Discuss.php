@@ -49,7 +49,7 @@ class Discuss
         for ($i=4; $i <=9 ; $i++) { 
            
         }
-        $result = $pdo->query("SELECT * FROM meteo");
+        $result = $connect->query("SELECT * FROM meteo");
         $meteo = $result->fetch(PDO::FETCH_ASSOC); 
         return $meteo;
     }
