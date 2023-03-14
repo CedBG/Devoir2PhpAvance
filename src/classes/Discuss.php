@@ -41,16 +41,10 @@ class Discuss
     }
 
 
-    public function takeData(PDO $connect, $date)
+    public function takeData(PDO $connect, $date): array
     {
-        foreach ($meteo as $m) {
-           
-        }
-        for ($i=4; $i <=9 ; $i++) { 
-           
-        }
-        $result = $connect->query("SELECT * FROM meteo");
-        $meteo = $result->fetch(PDO::FETCH_ASSOC); 
+        $stmt = $connect->query("SELECT * FROM meteo WHERE id >=4");
+        $meteo = $stmt->fetchAll(PDO::FETCH_ASSOC); 
         return $meteo;
     }
 
