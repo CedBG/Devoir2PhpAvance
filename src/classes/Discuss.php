@@ -73,10 +73,12 @@ class Discuss
 
     }
 
-    // public function displayOnPage()
-    // {
-       
-    // }
+    public function displayOnPage(PDO $connect)
+    {
+        $stmt = $connect->query("SELECT * FROM meteo WHERE date >= '2100-12-06'");
+        $meteo = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        return $meteo;
+    }
 }
 
 ?>
